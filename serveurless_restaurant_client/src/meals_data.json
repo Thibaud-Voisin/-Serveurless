@@ -1,0 +1,159 @@
+[
+    {
+      "appetizers": [
+        {
+          "name": "Bruschetta",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "ingredients": [
+            "toasted bread",
+            "tomatoes",
+            "garlic",
+            "basil",
+            "olive oil"
+          ],
+          "price": 6.5,
+          "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil."
+        },
+        {
+          "name": "Caprese Salad",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "ingredients": [
+            "mozzarella cheese",
+            "tomatoes",
+            "basil",
+            "balsamic glaze"
+          ],
+          "price": 8,
+          "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
+        },
+        {
+            "name": "Bruschetta",
+            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+            "ingredients": [
+              "toasted bread",
+              "tomatoes",
+              "garlic",
+              "basil",
+              "olive oil"
+            ],
+            "price": 6.5,
+            "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil."
+          },
+          {
+            "name": "Caprese Salad",
+            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+            "ingredients": [
+              "mozzarella cheese",
+              "tomatoes",
+              "basil",
+              "balsamic glaze"
+            ],
+            "price": 8,
+            "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
+          },
+          {
+            "name": "Bruschetta",
+            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+            "ingredients": [
+              "toasted bread",
+              "tomatoes",
+              "garlic",
+              "basil",
+              "olive oil"
+            ],
+            "price": 6.5,
+            "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil."
+          },
+          {
+            "name": "Caprese Salad",
+            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+            "ingredients": [
+              "mozzarella cheese",
+              "tomatoes",
+              "basil",
+              "balsamic glaze"
+            ],
+            "price": 8,
+            "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
+          }
+      ]
+    },
+    {
+      "mainCourses": [
+        {
+          "name": "Spaghetti Carbonara",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "ingredients": [
+            "spaghetti",
+            "egg yolks",
+            "pancetta",
+            "parmesan cheese",
+            "black pepper"
+          ],
+          "price": 14,
+          "description": "Classic Roman pasta dish with egg, pancetta, parmesan, and a touch of black pepper."
+        },
+        {
+          "name": "Margherita Pizza",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "ingredients": [
+            "pizza dough",
+            "tomato sauce",
+            "mozzarella cheese",
+            "basil"
+          ],
+          "price": 12.5,
+          "description": "Traditional Neapolitan pizza with tomato sauce, fresh mozzarella, and basil."
+        }
+      ]
+    },
+    {
+      "desserts": [
+        {
+          "name": "Tiramisu",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "ingredients": [
+            "espresso",
+            "ladyfingers",
+            "mascarpone cheese",
+            "cocoa powder",
+            "sugar"
+          ],
+          "price": 7,
+          "description": "Layered Italian dessert with espresso-soaked ladyfingers, creamy mascarpone, and cocoa."
+        },
+        {
+          "name": "Gelato",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "ingredients": [
+            "milk",
+            "sugar",
+            "flavorings (varies)"
+          ],
+          "price": 5,
+          "description": "Traditional Italian ice cream, available in a variety of flavors."
+        }
+      ]
+    },
+    {
+      "beverages": [
+        {
+          "name": "Italian Red Wine",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "variants": [
+            "Chianti",
+            "Barolo",
+            "Amarone"
+          ],
+          "price": "Glass 8.00, Bottle 30.00",
+          "description": "Selection of fine Italian red wines."
+        },
+        {
+          "name": "Espresso",
+          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "price": 3,
+          "description": "Rich Italian coffee, served in a small cup."
+        }
+      ]
+    }
+  ]
