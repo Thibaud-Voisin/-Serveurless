@@ -3,9 +3,17 @@ import paypal from './paypal.png';
 import visa from './visa.png';
 import apple_pay from './apple_pay.png';
 import google_pay from './google_pay.png';
+import { useNavigate } from 'react-router-dom';
+
 
 function Navbar ({removeFromCart, cart, onChildChange}) {
+  
+  let navigate = useNavigate();
 
+  const get_to_suivi = () =>
+  {
+    navigate('/Suivi-commande');
+  }
 
     const toggleTheme = () => {
         const theme = document.documentElement.getAttribute('data-theme');
@@ -92,7 +100,7 @@ function Navbar ({removeFromCart, cart, onChildChange}) {
           </div>
         ))}
         
-        <div className="my-4 flex justify-center">
+        <div className="mt-4 flex justify-center">
       <button  onClick={()=>document.getElementById('my_modal_4').showModal()} className="btn btn-active btn-primary">Checkout</button>
       </div>
       <dialog id="my_modal_4" className="modal">
@@ -102,17 +110,18 @@ function Navbar ({removeFromCart, cart, onChildChange}) {
     </form>
     <h3 className="font-bold text-lg">Select a payment method</h3>
 
-    <div className="payment-methods grid grid-cols-2 grid gap-4 pt-4">
-        <div  className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${paypal})` }}/>
-        <div className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${visa})` }}/>
-        <div className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${google_pay})` }}/>
-        <div className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${apple_pay})` }}/>
+    <div  className="payment-methods grid grid-cols-2 grid gap-4 pt-4">
+        <div onClick={() => get_to_suivi()} className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${paypal})` }}/>
+        <div onClick={() => get_to_suivi()} className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${visa})` }}/>
+        <div onClick={() => get_to_suivi()} className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${google_pay})` }}/>
+        <div onClick={() => get_to_suivi()} className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${apple_pay})` }}/>
         </div>
   </div>
 </dialog>
      
   </div>
 </dialog>
+
 </div>
     )
 }

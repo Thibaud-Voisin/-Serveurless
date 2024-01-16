@@ -43,3 +43,12 @@
   opacity: 1;
   transition: opacity 50ms ease-in;
 }
+
+@keyframes faddddeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

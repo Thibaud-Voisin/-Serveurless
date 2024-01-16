@@ -125,6 +125,19 @@
           ],
           "price": 5,
           "description": "Traditional Italian ice cream, available in a variety of flavors."
+        },
+        {
+          "name": "Panna Cotta",
+          "image": "https://pescetarian.kitchen/wp-content/uploads/2017/01/IMG_1061.jpg",
+          "ingredients": [
+            "espresso",
+            "ladyfingers",
+            "mascarpone cheese",
+            "cocoa powder",
+            "sugar"
+          ],
+          "price": 6.50,
+          "description": "A creamy Dessert made with sweetened cream thickened with gelatin."
         }
       ]
     },

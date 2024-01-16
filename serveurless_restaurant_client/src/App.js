@@ -14,7 +14,15 @@ function App() {
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(true);
   const [isHidden, setIsHidden] = useState(false);  // New state for controlling visibility
+  const [showAlert, setShowAlert] = useState(false);
 
+  const handleClick = () => {
+    console.log(showAlert);
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3500);
+  };
   const theme_switch = (newData) => {
     setTheme(newData);
 };
@@ -74,6 +82,12 @@ const removeFromCart = (item) => {
 
   return (
     <div className="App">
+      {showAlert && (
+        <div role="alert" className={`left-1/2 transform -translate-x-1/2 mt-[10vh] w-[50vw] fixed alert alert-success z-20 ${showAlert ? 'animate-fadeIn' : 'animate-fadeOut'}`}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <span>Ajoute au panier!</span>
+      </div>
+      )}
       <CSSTransition in={show} timeout={1000} classNames="fade" onExited={onExited}>
         <div className={`absolute bg-base-100 w-[100vw] h-[100vh] flex justify-center items-center z-10 ${isHidden ? 'hidden' : ''}`}>
           <CSSTransition in={show2} timeout={1450} classNames="fadein">
@@ -100,7 +114,7 @@ const removeFromCart = (item) => {
         
             {items.map((item, itemIndex) => (
               <div className='relative h-[40vw] sm:h-[30vw] lg:h-[20vw] xl:h-[10vw] card shadow ' key={itemIndex}>
-                 <div onClick={() => addToCart(item)} className='cursor-pointer hover:cursor-pointer bg-white rounded-full border-solid border border-slate-700 w-10 h-10 absolute bottom-0 left-0 m-2 lg:m-3  flex justify-center items-center text-xl'>
+                 <div onClick={() => {addToCart(item); handleClick();}} className='cursor-pointer hover:cursor-pointer bg-white rounded-full border-solid border border-slate-700 w-10 h-10 absolute bottom-0 left-0 m-2 lg:m-3  flex justify-center items-center text-xl'>
                   <img src={add_cart} className='p-1'></img>
                   </div>
                 <div className='h-full w-full grid grid-cols-5 gap-2 p-1 lg:p-2'>
@@ -124,6 +138,7 @@ const removeFromCart = (item) => {
         
           </div>
       </div>
+      
     </div>
     );
 }
