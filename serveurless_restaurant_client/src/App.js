@@ -9,6 +9,7 @@ import meal_data from './meals_data.json';
 
 
 function App() { 
+  const [cart, setCart] = useState([]);
   const [theme, setTheme] = useState('light');
   const [show, setShow] = useState(true);
   const [show2, setShow2] = useState(true);
@@ -16,6 +17,36 @@ function App() {
 
   const theme_switch = (newData) => {
     setTheme(newData);
+};
+
+const addToCart = (item) => {
+  setCart((prevCart) => {
+    const existingItem = prevCart.find(cartItem => cartItem.name === item.name);
+    if (existingItem) {
+      // Item already exists in cart, increase its number
+      return prevCart.map(cartItem => 
+        cartItem.name === item.name ? { ...cartItem, number: cartItem.number + 1 } : cartItem
+      );
+    } else {
+      // Item not in cart, add it
+      return [...prevCart, { ...item, number: 1 }];
+    }
+  });
+};
+
+const removeFromCart = (item) => {
+  setCart((prevCart) => {
+    const existingItem = prevCart.find(cartItem => cartItem.name === item.name);
+    if (existingItem && existingItem.number > 1) {
+      // Item exists and its number is more than 1, decrease its number
+      return prevCart.map(cartItem => 
+        cartItem.name === item.name ? { ...cartItem, number: cartItem.number - 1 } : cartItem
+      );
+    } else {
+      // Item exists and its number is 1 or item doesn't exist, remove it from the cart
+      return prevCart.filter(cartItem => cartItem.name !== item.name);
+    }
+  });
 };
 
   useEffect(() => {
@@ -52,7 +83,7 @@ function App() {
       </CSSTransition>
 
       <div>
-        <Navbar onChildChange={theme_switch} className='z-1' />
+        <Navbar removeFromCart={removeFromCart} cart={cart} onChildChange={theme_switch} className='z-1' />
         <div className={'bg-white'}>
           <img src={restaurant_cover} className='top-0 w-full h-[20vh] object-cover' alt="Restaurant Cover"></img>
         </div>
@@ -68,8 +99,8 @@ function App() {
             <div className='m-2 grid lg:grid-cols-2 xl:grid-cols-4 gap-4'>
         
             {items.map((item, itemIndex) => (
-              <div className='relative h-[40vw] sm:h-[30vw] lg:h-[20vw] xl:h-[10vw] rounded border-solid border border-slate-500' key={itemIndex}>
-                 <div className='bg-white rounded-full border-solid border border-slate-700 w-10 h-10 absolute bottom-0 left-0 m-2 lg:m-3  flex justify-center items-center text-xl'>
+              <div className='relative h-[40vw] sm:h-[30vw] lg:h-[20vw] xl:h-[10vw] card shadow ' key={itemIndex}>
+                 <div onClick={() => addToCart(item)} className='cursor-pointer hover:cursor-pointer bg-white rounded-full border-solid border border-slate-700 w-10 h-10 absolute bottom-0 left-0 m-2 lg:m-3  flex justify-center items-center text-xl'>
                   <img src={add_cart} className='p-1'></img>
                   </div>
                 <div className='h-full w-full grid grid-cols-5 gap-2 p-1 lg:p-2'>

@@ -3,7 +3,7 @@
       "appetizers": [
         {
           "name": "Bruschetta",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "image": "https://www.healthyfoodcreation.fr/wp-content/uploads/2023/07/brus-2.jpg",
           "ingredients": [
             "toasted bread",
             "tomatoes",
@@ -16,7 +16,7 @@
         },
         {
           "name": "Caprese Salad",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "image": "https://www.cookinwithmima.com/wp-content/uploads/2021/08/Caprese-Salad-3.jpg",
           "ingredients": [
             "mozzarella cheese",
             "tomatoes",
@@ -27,62 +27,55 @@
           "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
         },
         {
-            "name": "Bruschetta",
-            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
-            "ingredients": [
-              "toasted bread",
-              "tomatoes",
-              "garlic",
-              "basil",
-              "olive oil"
-            ],
-            "price": 6.5,
-            "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil."
-          },
-          {
-            "name": "Caprese Salad",
-            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
-            "ingredients": [
-              "mozzarella cheese",
-              "tomatoes",
-              "basil",
-              "balsamic glaze"
-            ],
-            "price": 8,
-            "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
-          },
-          {
-            "name": "Bruschetta",
-            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
-            "ingredients": [
-              "toasted bread",
-              "tomatoes",
-              "garlic",
-              "basil",
-              "olive oil"
-            ],
-            "price": 6.5,
-            "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil."
-          },
-          {
-            "name": "Caprese Salad",
-            "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
-            "ingredients": [
-              "mozzarella cheese",
-              "tomatoes",
-              "basil",
-              "balsamic glaze"
-            ],
-            "price": 8,
-            "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
-          }
+          "name": "Stuffed Mushrooms",
+          "image": "https://hips.hearstapps.com/hmg-prod/images/stuffed-mushrooms-index-6520269300d9b.jpg",
+          "ingredients": [
+            "mushrooms",
+            "cream cheese",
+            "garlic",
+            "parmesan cheese",
+            "breadcrumbs",
+            "parsley"
+          ],
+          "price": 7,
+          "description": "Baked mushrooms filled with a cheesy garlic mixture."
+        },
+        {
+          "name": "Spinach Artichoke",
+          "image": "https://www.spoonforkbacon.com/wp-content/uploads/2022/04/spinach-artichoke-dip-recipe.jpg",
+          "ingredients": [
+            "spinach",
+            "artichoke hearts",
+            "cream cheese",
+            "sour cream",
+            "parmesan cheese",
+            "mozzarella cheese"
+          ],
+          "price": 9,
+          "description": "Creamy blend of spinach, artichokes, and cheeses, served with toasted bread or chips."
+        },
+        {
+          "name": "Fried Calamari",
+          "image": "https://www.willcookforsmiles.com/wp-content/uploads/2021/07/Calamari-5.jpg",
+          "ingredients": [
+            "calamari rings",
+            "all-purpose flour",
+            "lemon juice",
+            "marinara sauce",
+            "spices",
+            "salt",
+            "pepper"
+          ],
+          "price": 10,
+          "description": "Lightly breaded and fried calamari rings, served with lemon wedges."
+          }      
       ]
     },
     {
       "mainCourses": [
         {
-          "name": "Spaghetti Carbonara",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "name": "Spaghetti Carbo",
+          "image": "https://www.twopeasandtheirpod.com/wp-content/uploads/2023/01/Spaghetti-Carbonara168766.jpg",
           "ingredients": [
             "spaghetti",
             "egg yolks",
@@ -95,7 +88,7 @@
         },
         {
           "name": "Margherita Pizza",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg",
           "ingredients": [
             "pizza dough",
             "tomato sauce",
@@ -111,7 +104,7 @@
       "desserts": [
         {
           "name": "Tiramisu",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "image": "https://bakeplaysmile.com/wp-content/uploads/2022/06/tiramisu-square.jpg",
           "ingredients": [
             "espresso",
             "ladyfingers",
@@ -120,7 +113,7 @@
             "sugar"
           ],
           "price": 7,
-          "description": "Layered Italian dessert with espresso-soaked ladyfingers, creamy mascarpone, and cocoa."
+          "description": "Layered Italian dessert with espresso-soaked ladyfingers, creamy mascarpone."
         },
         {
           "name": "Gelato",
@@ -139,18 +132,18 @@
       "beverages": [
         {
           "name": "Italian Red Wine",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "image": "https://thebestwinestore.com/cdn/shop/products/r-lambrusco_961x1227.jpg",
           "variants": [
             "Chianti",
             "Barolo",
             "Amarone"
           ],
-          "price": "Glass 8.00, Bottle 30.00",
+          "price": 30,
           "description": "Selection of fine Italian red wines."
         },
         {
           "name": "Espresso",
-          "image": "https://foodnouveau.com/wp-content/uploads/2012/07/Dark-Chocolate-Gelato_03_tiny.jpg",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tazzina_di_caffè_a_Ventimiglia.jpg/1200px-Tazzina_di_caffè_a_Ventimiglia.jpg",
           "price": 3,
           "description": "Rich Italian coffee, served in a small cup."
         }

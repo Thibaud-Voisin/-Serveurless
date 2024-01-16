@@ -1,6 +1,11 @@
 import {React, useState, useEffect} from "react";
+import paypal from './paypal.png';
+import visa from './visa.png';
+import apple_pay from './apple_pay.png';
+import google_pay from './google_pay.png';
 
-function Navbar ({onChildChange}) {
+function Navbar ({removeFromCart, cart, onChildChange}) {
+
 
     const toggleTheme = () => {
         const theme = document.documentElement.getAttribute('data-theme');
@@ -38,22 +43,76 @@ function Navbar ({onChildChange}) {
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
         <div className="indicator">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-          <span className="badge badge-sm indicator-item">8</span>
+          <span className="badge badge-sm indicator-item">{cart.reduce((total, item) => total + item.number, 0)} </span>
         </div>
       </div>
       <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-        <div className="card-body">
-          <span className="font-bold text-lg">8 Items</span>
-          <span className="text-info">Subtotal: $999</span>
+        
+            {cart.length ? (<div className="card-body">
+                <span className="font-bold text-lg">{cart.reduce((total, item) => total + item.number, 0)} Items</span>
+          <span className="text-info">Subtotal: {cart.reduce((total, item) => total + (item.price * item.number), 0)} €</span>
           <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
-          </div>
-        </div>
+            <button className="btn btn-primary btn-block" onClick={()=>document.getElementById('my_modal_3').showModal()}>View cart</button>
+            </div>
+            </div>): 
+            (<div className="card-body">
+            <span className="font-bold text-lg">Empty Cart</span>
+            </div>
+            )}
       </div>
     </div>
     <p className="text-xl mx-2">Table 12</p>
 
   </div>
+  <dialog id="my_modal_3" className="modal">
+  <div className="modal-box ">
+    <form method="dialog">
+      {/* if there is a button in form, it will close the modal */}
+      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 className="font-bold text-lg">Panier</h3>
+        {cart.map((item, index) => ( 
+            <div className="card shadow w-full" key={index}>
+            <div className="card-body p-0">
+              <div className="p-2 grid grid-cols-6 gap-4">
+                
+              <div className='col-span-2 rounded bg-red-500 bg-cover bg-center' style={{ backgroundImage: `url(${item.image})` }}/>
+                <div className="col-span-3">
+                  <p className="font-bold">{item.number} x {item.name}</p>
+                    <p className="hidden lg:block">{item.description}</p>
+                </div>
+                <div className="col-span-1  justify-center">
+                <div  onClick={() => removeFromCart(item)} className='cursor-pointer hover:cursor-pointer bg-white rounded-full border-solid border border-slate-700 w-7 h-7 lg:w-10 lg:h-10 m-2 lg:m-3  flex justify-center items-center text-xl'>
+                    <img src='https://icons.veryicon.com/png/o/miscellaneous/flat-wireframe-library/trash-bin-3.png'></img>
+                </div>
+                <p className="flex justify-center items-center font-bold">{item.price * item.number} €</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        <div className="my-4 flex justify-center">
+      <button  onClick={()=>document.getElementById('my_modal_4').showModal()} className="btn btn-active btn-primary">Checkout</button>
+      </div>
+      <dialog id="my_modal_4" className="modal">
+  <div className="modal-box">
+    <form method="dialog">
+      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <h3 className="font-bold text-lg">Select a payment method</h3>
+
+    <div className="payment-methods grid grid-cols-2 grid gap-4 pt-4">
+        <div  className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${paypal})` }}/>
+        <div className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${visa})` }}/>
+        <div className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${google_pay})` }}/>
+        <div className="cursor-pointer hover:cursor-pointer col-span-1 card shadow bg-cover bg-center h-[17vh]" style={{ backgroundImage: `url(${apple_pay})` }}/>
+        </div>
+  </div>
+</dialog>
+     
+  </div>
+</dialog>
 </div>
     )
 }
