@@ -1,12 +1,45 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Progress } from 'flowbite-react';
-import { Line, Circle } from 'rc-progress';
+import { Line } from 'rc-progress';
 import gsap from 'gsap';
 
 
 function Suivi() {
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/info_avance', {
+                  method: 'GET',
+                });
+          
+                if (!response.ok) {
+                  throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                else{
+                    let data = await response.json();
+                    if (data != status_nb) {
+                        setStatus_nb(data);
+                        setPercent(percent + 33);
+                        updateStatus();
+                    }
+                }
+              } catch (error) {
+                console.error('Error during POST request:', error);
+              }
+        
+        };
+    
+        // Set up the interval to make a request every second
+        const intervalId = setInterval(fetchData, 1000);
+    
+        // Cleanup the interval when the component is unmounted
+        return () => clearInterval(intervalId);
+      }, []);
+
+
     const [percent, setPercent] = useState(33);
     const [status, setStatus] = useState('Envoyée à la cuisine');
+    const [status_nb, setStatus_nb] = useState(1);
     const statusRef = useRef();
 
     useEffect(() => {
@@ -57,8 +90,7 @@ function Suivi() {
          </div>
       </div>
    </div>
-   <button className='btn' onClick={increase}>Increase</button>
 </div>
-    );
+);
 }
 export default Suivi;

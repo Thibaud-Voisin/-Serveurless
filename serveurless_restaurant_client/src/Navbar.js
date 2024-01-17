@@ -13,12 +13,32 @@ function Navbar ({removeFromCart, cart, onChildChange}) {
   const get_to_suivi = async () =>
   {
       try {
-        const response = await fetch('http://localhost:3000/send_order', {
+        const response = await fetch('http://localhost:3000/send_cart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(cart),
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        else{
+          navigate('/Suivi-commande');
+        }
+  
+      } catch (error) {
+        console.error('Error during POST request:', error);
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/send_status', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: '',
         });
   
         if (!response.ok) {

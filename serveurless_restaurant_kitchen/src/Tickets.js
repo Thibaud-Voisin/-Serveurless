@@ -6,7 +6,66 @@ import en_attente from './en attente.png';
 import ready from './ready.png';
 
 function Tickets() {
-    let tickets_data = 
+
+  const send_suivi = async () =>
+  {
+    setStatuss(statuss + 1);
+      try {
+        const response = await fetch('http://localhost:3000/update_status', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({'valuee':statuss}),
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+  
+      } catch (error) {
+        console.error('Error during POST request:', error);
+      }
+    }
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/get_cart', {
+              method: 'GET',
+            });
+            
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            else{
+                let data = await response.json();
+                if (data_r != data)
+                {
+                  settickets_data([...tickets_data, data]);
+                  setdata_r(data);
+                }
+                else
+                {
+                  console.log(data_r);
+                }
+            }
+          } catch (error) {
+            console.error('Error during POST request:', error);
+          }
+    
+    };
+
+    // Set up the interval to make a request every second
+    const intervalId = setInterval(fetchData, 1000);
+
+    // Cleanup the interval when the component is unmounted
+    return () => clearInterval(intervalId);
+  }, []);
+
+    const [statuss, setStatuss] = useState(1);
+    const [data_r , setdata_r] = useState({});
+    const [tickets_data, settickets_data] = useState( 
     [
         {
             "state":1,
@@ -93,7 +152,7 @@ function Tickets() {
                     "type": "Main Courses"
                   }]
                 }
-    ];
+    ]);
     document.documentElement.setAttribute('data-theme', 'light');
 
     const [items, setItems] = useState(tickets_data);
@@ -142,7 +201,7 @@ function Tickets() {
     <div ref={scrollContainer} className="flex items-center overflow-x-auto whitespace-nowrap scroll-smooth h-[90vh] p-4">
             {tickets_data.map((order, index) => (
                 <div className="card card-compact w-96 bg-base-100 shadow-xl inline-block min-w-[20vw] h-[80vh] mr-4 rounded-xl font-black" key={index}>
-                    <div className={`flex rounded-t-xl h-[7vh] bg-yellow-200 ${order.state  == 1 ? 'bg-red-400' : order.state  == 2 ? 'bg-yellow-300' : 'bg-green-500'} `}>
+                    <div className={`flex rounded-t-xl h-[7vh] bg-yellow-200 ${statuss  == 1 ? 'bg-red-400' : statuss  == 2 ? 'bg-yellow-300' : 'bg-green-500'} `}>
                     <h2 className='flex-1 text-left text-2xl font-bold m-4'>Table {order.table}</h2>
                     <p className='flex-1 text-end text-2xl font-bold m-4'>{new Date(order.timestamp * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }).replace(':', ':')}</p>
                     </div>
@@ -179,9 +238,9 @@ function Tickets() {
                     </div>
                     {order.state < 3 &&
                 <div className='flex items-center justify-center h-[10vh]'>
-                    <button className='flex btn w-[18vw] h-[7vh] bg-green-700 text-white hover:bg-green-900 text-lg font-medium'> 
+                    <button onClick={() => send_suivi()} className='flex btn w-[18vw] h-[7vh] bg-green-700 text-white hover:bg-green-900 text-lg font-medium'> 
                         <img src="https://www.pngkey.com/png/full/297-2979687_icon-check-white-check-mark-png-white-check.png" className='w-[20px] h-[20px]' ></img>
-                        <p> {order.state  == 1 ? 'Commencer la preparation' : 'Terminer' }</p>
+                        <p> {statuss  == 1 ? 'Commencer la preparation' : 'Terminer' }</p>
                     </button>
                     </div>
                     }

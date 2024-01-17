@@ -13,7 +13,7 @@
           ],
           "price": 6.5,
           "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil.",
-          "type": "appetizers"
+          "type": "Appetizers"
         },
         {
           "name": "Caprese Salad",
@@ -26,7 +26,7 @@
           ],
           "price": 8,
           "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction.",
-          "type": "appetizers"
+          "type": "Appetizers"
         },
         {
           "name": "Stuffed Mushrooms",
@@ -41,7 +41,7 @@
           ],
           "price": 7,
           "description": "Baked mushrooms filled with a cheesy garlic mixture.",
-          "type": "appetizers"
+          "type": "Appetizers"
         },
         {
           "name": "Spinach Artichoke",
@@ -56,7 +56,7 @@
           ],
           "price": 9,
           "description": "Creamy blend of spinach, artichokes, and cheeses, served with toasted bread or chips.",
-          "type": "appetizers"
+          "type": "Appetizers"
         },
         {
           "name": "Fried Calamari",
@@ -72,7 +72,7 @@
           ],
           "price": 10,
           "description": "Lightly breaded and fried calamari rings, served with lemon wedges.",
-          "type": "appetizers"
+          "type": "Appetizers"
           }      
       ]
     },
