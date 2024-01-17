@@ -12,7 +12,8 @@
             "olive oil"
           ],
           "price": 6.5,
-          "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil."
+          "description": "Toasted bread topped with fresh tomatoes, garlic, and basil, drizzled with olive oil.",
+          "type": "appetizers"
         },
         {
           "name": "Caprese Salad",
@@ -24,7 +25,8 @@
             "balsamic glaze"
           ],
           "price": 8,
-          "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction."
+          "description": "Fresh mozzarella and ripe tomatoes with basil leaves and a balsamic reduction.",
+          "type": "appetizers"
         },
         {
           "name": "Stuffed Mushrooms",
@@ -38,7 +40,8 @@
             "parsley"
           ],
           "price": 7,
-          "description": "Baked mushrooms filled with a cheesy garlic mixture."
+          "description": "Baked mushrooms filled with a cheesy garlic mixture.",
+          "type": "appetizers"
         },
         {
           "name": "Spinach Artichoke",
@@ -52,7 +55,8 @@
             "mozzarella cheese"
           ],
           "price": 9,
-          "description": "Creamy blend of spinach, artichokes, and cheeses, served with toasted bread or chips."
+          "description": "Creamy blend of spinach, artichokes, and cheeses, served with toasted bread or chips.",
+          "type": "appetizers"
         },
         {
           "name": "Fried Calamari",
@@ -67,7 +71,8 @@
             "pepper"
           ],
           "price": 10,
-          "description": "Lightly breaded and fried calamari rings, served with lemon wedges."
+          "description": "Lightly breaded and fried calamari rings, served with lemon wedges.",
+          "type": "appetizers"
           }      
       ]
     },
@@ -84,7 +89,8 @@
             "black pepper"
           ],
           "price": 14,
-          "description": "Classic Roman pasta dish with egg, pancetta, parmesan, and a touch of black pepper."
+          "description": "Classic Roman pasta dish with egg, pancetta, parmesan, and a touch of black pepper.",
+          "type": "Main Courses"
         },
         {
           "name": "Margherita Pizza",
@@ -96,7 +102,8 @@
             "basil"
           ],
           "price": 12.5,
-          "description": "Traditional Neapolitan pizza with tomato sauce, fresh mozzarella, and basil."
+          "description": "Traditional Neapolitan pizza with tomato sauce, fresh mozzarella, and basil.",
+          "type": "Main Courses"
         }
       ]
     },
@@ -113,7 +120,8 @@
             "sugar"
           ],
           "price": 7,
-          "description": "Layered Italian dessert with espresso-soaked ladyfingers, creamy mascarpone."
+          "description": "Layered Italian dessert with espresso-soaked ladyfingers, creamy mascarpone.",
+          "type": "Desserts"
         },
         {
           "name": "Gelato",
@@ -124,7 +132,8 @@
             "flavorings (varies)"
           ],
           "price": 5,
-          "description": "Traditional Italian ice cream, available in a variety of flavors."
+          "description": "Traditional Italian ice cream, available in a variety of flavors.",
+          "type": "Desserts"
         },
         {
           "name": "Panna Cotta",
@@ -137,7 +146,8 @@
             "sugar"
           ],
           "price": 6.50,
-          "description": "A creamy Dessert made with sweetened cream thickened with gelatin."
+          "description": "A creamy Dessert made with sweetened cream thickened with gelatin.",
+          "type": "Desserts"
         }
       ]
     },
@@ -152,13 +162,15 @@
             "Amarone"
           ],
           "price": 30,
-          "description": "Selection of fine Italian red wines."
+          "description": "Selection of fine Italian red wines.",
+          "type": "Beverages"
         },
         {
           "name": "Espresso",
           "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tazzina_di_caffè_a_Ventimiglia.jpg/1200px-Tazzina_di_caffè_a_Ventimiglia.jpg",
           "price": 3,
-          "description": "Rich Italian coffee, served in a small cup."
+          "description": "Rich Italian coffee, served in a small cup.",
+          "type": "Beverages"
         }
       ]
     }
