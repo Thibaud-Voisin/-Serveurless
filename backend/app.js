@@ -24,25 +24,7 @@ app.get('/get_cart', async (req, res) => {
   if (ress.rows.length == 0) {
     res.sendStatus(400);
   }
-  else{
-  const menuItems = JSON.parse(ress.rows[0].string_value);
-
-  const formattedData = {
-    state: 1,
-    timestamp: Math.floor(Date.now() / 1000),
-    table: 12,
-    data: menuItems.map(item => ({
-      number: item.number,
-      name: item.name,
-      image: item.image,
-      ingredients: item.ingredients,
-      price: item.price,
-      description: item.description,
-      type: item.type
-    }))
-  };
-  res.send(formattedData);
-}
+  res.send(JSON.parse(ress.rows[0].string_value));
 });
 
 app.get('/info_avance', async (req, res) => {

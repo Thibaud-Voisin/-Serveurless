@@ -17,10 +17,26 @@ function Suivi() {
                 }
                 else{
                     let data = await response.json();
+                    console.log(data);
+                    console.log(typeof(data));
                     if (data != status_nb) {
+                      console.log('ok');
                         setStatus_nb(data);
-                        setPercent(percent + 33);
-                        updateStatus();
+                        if (data == 1) 
+                        {
+                          setPercent(33);
+                          setStatus('Envoyée à la cuisine');
+                        }
+                        if (data == 2)
+                        {
+                           setPercent(66);
+                            setStatus('En cours de préparation');
+                        
+                          }
+                           if (data == 3){
+                            setPercent(99);
+                            setStatus('Prête');
+                           }
                     }
                 }
               } catch (error) {
@@ -66,7 +82,7 @@ function Suivi() {
     const updateStatus = () => {
         switch (percent) {
             case 33:
-                setStatus('En cours de préparation');
+                setStatus('En courxxxs de préparation');
                 break;
             case 66:
                 setStatus('Prête');

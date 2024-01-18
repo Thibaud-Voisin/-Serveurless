@@ -13,12 +13,28 @@ function Navbar ({removeFromCart, cart, onChildChange}) {
   const get_to_suivi = async () =>
   {
       try {
+        const menuItems = cart;
+
+        const formattedData = {
+          state: 1,
+          timestamp: Math.floor(Date.now() / 1000),
+          table: 12,
+          data: menuItems.map(item => ({
+            number: item.number,
+            name: item.name,
+            image: item.image,
+            ingredients: item.ingredients,
+            price: item.price,
+            description: item.description,
+            type: item.type
+          }))
+        }
         const response = await fetch('http://localhost:3000/send_cart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(cart),
+          body: JSON.stringify(formattedData),
         });
   
         if (!response.ok) {
