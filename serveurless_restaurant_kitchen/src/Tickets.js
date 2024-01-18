@@ -569,7 +569,7 @@ function Tickets() {
     <div ref={scrollContainer} className="flex items-center overflow-x-auto whitespace-nowrap scroll-smooth h-[90vh] p-4">
             {tickets_data.map((order, index) => (
                 <div className="card card-compact w-96 bg-base-100 shadow-xl inline-block min-w-[20vw] h-[80vh] mr-4 rounded-xl font-black" key={index}>
-                    <div className={`flex rounded-t-xl h-[7vh] bg-yellow-200 ${order.state  == 1 ? 'bg-red-500' : order.state  == 2 ? 'bg-yellow-300' : 'bg-green-500'} `}>
+                    <div className={`flex rounded-t-xl h-[7vh]  ${order.state  == 1 ? 'bg-red-500' : order.state  == 2 ? 'bg-yellow-300' : 'bg-green-500'} `}>
                     <h2 className='flex-1 text-left text-2xl font-bold m-4'>Table {order.table}</h2>
                     <p className='flex-1 text-end text-2xl font-bold m-4'>{new Date(order.timestamp * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }).replace(':', ':')}</p>
                     </div>
