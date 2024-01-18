@@ -29,7 +29,7 @@ function Navbar ({removeFromCart, cart, onChildChange}) {
             type: item.type
           }))
         }
-        const response = await fetch('http://localhost:3000/send_cart', {
+        const response = await fetch('https://serveurlessbackend-ec2a73faa412.herokuapp.com/send_cart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function Navbar ({removeFromCart, cart, onChildChange}) {
       }
 
       try {
-        const response = await fetch('http://localhost:3000/send_status', {
+        const response = await fetch('https://serveurlessbackend-ec2a73faa412.herokuapp.com/send_status', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

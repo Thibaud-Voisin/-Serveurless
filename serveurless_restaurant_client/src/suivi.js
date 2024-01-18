@@ -8,7 +8,7 @@ function Suivi() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/info_avance', {
+                const response = await fetch('https://serveurlessbackend-ec2a73faa412.herokuapp.com/info_avance', {
                   method: 'GET',
                 });
           

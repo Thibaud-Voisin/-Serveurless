@@ -462,7 +462,7 @@ function Tickets() {
   {
     increaseOrderStateByTimestamp(timestamp);
       try {
-        const response = await fetch('http://localhost:3000/update_status', {
+        const response = await fetch('https://serveurlessbackend-ec2a73faa412.herokuapp.com/update_status', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -482,7 +482,7 @@ function Tickets() {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch('http://localhost:3000/get_cart', {
+          const response = await fetch('https://serveurlessbackend-ec2a73faa412.herokuapp.com/get_cart', {
             method: 'GET',
           });
   
